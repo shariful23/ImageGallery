@@ -27,6 +27,19 @@ function App() {
     setTerm(text);
   };
 
+ let content = '';
+
+  if (images.length === 0) {
+    content = (
+      <p className="text-2xl text-center mt-72 font-mono">
+        No Images Found with your query "{term}"
+      </p>
+    );
+  }
+
+
+
+
 
   return (
     <div className="container mx-auto">
@@ -41,6 +54,7 @@ function App() {
           ))}
         </div>
       )}
+   {!isLoading ? content : ""}
     
     </div>
   );
